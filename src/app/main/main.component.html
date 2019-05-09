@@ -1,0 +1,8 @@
+<button (click)="test()">test</button>
+<button (click)="disconnect()">disconnect</button>
+
+<button (click)="create()">create</button>
+
+<ul>
+  <li *ngFor="let r of rooms" (click)="join(r)">{{r}}</li>
+</ul>

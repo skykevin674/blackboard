@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@nguniversal/express-engine": "^7.1.1",
+    "angular2-websocket": "^0.9.8",
     "core-js": "^2.5.4",
     "jsencrypt": "^3.0.0-rc.1",
     "ngx-cookie": "^4.1.2",

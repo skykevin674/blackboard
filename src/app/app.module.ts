@@ -9,13 +9,14 @@ import { EncryptInterceptor } from './service/encrypt.interceptor';
 import { JwtInterceptor } from './service/jwt.interceptor';
 import { CookieModule } from 'ngx-cookie';
 import { AuthInterceptor } from './service/auth.interceptor';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule, HttpClientModule, CookieModule.forRoot()
   ],
   providers: [
@@ -23,6 +24,7 @@ import { AuthInterceptor } from './service/auth.interceptor';
     { provide: HTTP_INTERCEPTORS, useClass: EncryptInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    UserService
   ],
   bootstrap: [AppComponent]
 })

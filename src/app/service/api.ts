@@ -14,7 +14,24 @@ export class Api {
     return this.http.post(`${environment.api_url}/user/login`, param);
   }
 
-  test() {
-    return this.http.get(`${environment.api_url}/hello/5`);
+  getUser(ticket: string) {
+    return this.http.get(`${environment.api_url}/user/get/${encodeURIComponent(ticket)}`);
+  }
+
+  createRoom(userId: number) {
+    return this.http.post(`${environment.api_url}/room/create`, {id: userId});
+  }
+  quitRoom(userId: number) {
+    return this.http.post(`${environment.api_url}/room/quit`, {id: userId});
+  }
+  joinRoom(roomId: string, userId: number) {
+    return this.http.post(`${environment.api_url}/room/join`, {roomId, id: userId});
+  }
+  queryRooms() {
+    return this.http.get(`${environment.api_url}/room/query`);
+  }
+
+  test(channel: string) {
+    return this.http.get(`${environment.api_url}/room/test/${channel}`);
   }
 }
