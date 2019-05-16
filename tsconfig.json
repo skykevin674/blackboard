@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "wizard": [
+        "dist/wizard"
+      ],
+      "wizard/*": [
+        "dist/wizard/*"
+      ]
+    }
   }
 }
